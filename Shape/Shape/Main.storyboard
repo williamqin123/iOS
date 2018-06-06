@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1Tm-PS-V6L">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location Picker-->
+        <scene sceneID="F9k-lN-wn0">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nzv-6t-vmf" customClass="TabBarPickerViewController" customModule="Shape" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3nw-ye-mLQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGZ-qa-NhF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Bw-Km-Z68">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcZ-XM-r2r">
+                                <rect key="frame" x="16" y="244" width="288" height="267"/>
+                                <string key="text">This is the generic UIPicker view. Unlike UIDatePicker, it can show names of cities, images, and combinations. Select tabs with the UITabBarController, which is at the bottom of your screen.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0re-AS-zjE">
+                                <rect key="frame" x="0.0" y="20" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="POd-SQ-hjT"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0re-AS-zjE" firstAttribute="leading" secondItem="2Bw-Km-Z68" secondAttribute="leadingMargin" constant="-16" id="AVv-bt-dIj"/>
+                            <constraint firstItem="0re-AS-zjE" firstAttribute="top" secondItem="3nw-ye-mLQ" secondAttribute="bottom" id="B0K-TI-kqc"/>
+                            <constraint firstItem="NcZ-XM-r2r" firstAttribute="leading" secondItem="2Bw-Km-Z68" secondAttribute="leadingMargin" id="e2l-vu-pML"/>
+                            <constraint firstItem="NcZ-XM-r2r" firstAttribute="trailing" secondItem="2Bw-Km-Z68" secondAttribute="trailingMargin" id="e5k-9P-mzT"/>
+                            <constraint firstItem="NGZ-qa-NhF" firstAttribute="top" secondItem="NcZ-XM-r2r" secondAttribute="bottom" constant="8" id="hob-Sa-YQq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0re-AS-zjE" secondAttribute="trailing" constant="-16" id="w1c-Zb-DyD"/>
+                            <constraint firstItem="NcZ-XM-r2r" firstAttribute="top" secondItem="0re-AS-zjE" secondAttribute="bottom" constant="8" id="w3O-Iy-Ly4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Location Picker" image="location" selectedImage="location" id="9fw-za-7Rk">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="location"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cityPicker" destination="0re-AS-zjE" id="2cz-3Y-2TZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZh-uK-6FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3509" y="-2849"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="SXp-8G-Z2Q">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qgZ-GH-aPT" customClass="TableViewController" customModule="Shape" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uIA-7o-znm"/>
+                        <viewControllerLayoutGuide type="bottom" id="jB4-iH-8iA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="opc-13-2ri">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-vr-JNa">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KLD-sd-ERv">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KLD-sd-ERv" secondAttribute="trailing" id="1VC-bv-KFQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="KLD-sd-ERv" secondAttribute="bottom" id="bru-vv-sXl"/>
+                                    <constraint firstItem="KLD-sd-ERv" firstAttribute="leading" secondItem="tCD-vr-JNa" secondAttribute="leading" id="jVl-5v-AIK"/>
+                                    <constraint firstAttribute="centerX" secondItem="KLD-sd-ERv" secondAttribute="centerX" id="k8h-gc-GFl"/>
+                                    <constraint firstAttribute="centerY" secondItem="KLD-sd-ERv" secondAttribute="centerY" id="nlt-7c-oUm"/>
+                                    <constraint firstItem="KLD-sd-ERv" firstAttribute="top" secondItem="tCD-vr-JNa" secondAttribute="top" id="reS-Zj-Ety"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkG-X9-jjd">
+                                <rect key="frame" x="16" y="488" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="goq-gM-6s1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="40"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="More..." backgroundImage="button">
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinSlotMachine:" destination="Fix-Sh-QPh" eventType="touchUpInside" id="hz1-BE-7fv"/>
+                                    <segue destination="O00-j7-6c5" kind="push" id="3Sm-li-bG2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jB4-iH-8iA" firstAttribute="top" secondItem="pkG-X9-jjd" secondAttribute="bottom" constant="20" id="FDN-GY-cu5"/>
+                            <constraint firstItem="tCD-vr-JNa" firstAttribute="leading" secondItem="opc-13-2ri" secondAttribute="leadingMargin" constant="-16" id="Mbx-ub-wQL"/>
+                            <constraint firstItem="pkG-X9-jjd" firstAttribute="leading" secondItem="opc-13-2ri" secondAttribute="leadingMargin" id="NR1-cd-EiZ"/>
+                            <constraint firstItem="tCD-vr-JNa" firstAttribute="trailing" secondItem="opc-13-2ri" secondAttribute="trailingMargin" constant="16" id="OiK-YB-gra"/>
+                            <constraint firstItem="tCD-vr-JNa" firstAttribute="top" secondItem="uIA-7o-znm" secondAttribute="bottom" id="QP5-fY-3hG"/>
+                            <constraint firstItem="pkG-X9-jjd" firstAttribute="trailing" secondItem="opc-13-2ri" secondAttribute="trailingMargin" id="c1C-M6-hfa"/>
+                            <constraint firstItem="pkG-X9-jjd" firstAttribute="top" secondItem="tCD-vr-JNa" secondAttribute="bottom" constant="8" id="ySk-ry-1LU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vQE-s0-XWU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableViewList" destination="KLD-sd-ERv" id="d7n-Ht-E6Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQf-yJ-G37" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3358" y="-3841"/>
+        </scene>
+        <!--Casino Picker-->
+        <scene sceneID="5bb-TX-Jad">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fix-Sh-QPh" customClass="CasinoSlotMachineViewController" customModule="Shape" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Efo-ED-MSW"/>
+                        <viewControllerLayoutGuide type="bottom" id="LJ7-MY-5He"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4vH-su-GPx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jackpot Slot Machine!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffg-ei-mpv">
+                                <rect key="frame" x="16" y="312" width="288" height="199"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsK-PE-xw4">
+                                <rect key="frame" x="0.0" y="20" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="xmm-xi-bgf"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-hI-nhf">
+                                <rect key="frame" x="16" y="244" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RtP-XX-MeW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="40"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="SPIN!" backgroundImage="button">
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="spinSlotMachine:" destination="Fix-Sh-QPh" eventType="touchUpInside" id="S9T-kI-3tX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ffg-ei-mpv" firstAttribute="leading" secondItem="4vH-su-GPx" secondAttribute="leadingMargin" id="4yR-dg-PLO"/>
+                            <constraint firstItem="jxu-hI-nhf" firstAttribute="leading" secondItem="4vH-su-GPx" secondAttribute="leadingMargin" id="5F3-0a-3jN"/>
+                            <constraint firstItem="ffg-ei-mpv" firstAttribute="top" secondItem="jxu-hI-nhf" secondAttribute="bottom" constant="8" id="64T-Jd-rYW"/>
+                            <constraint firstItem="ffg-ei-mpv" firstAttribute="trailing" secondItem="4vH-su-GPx" secondAttribute="trailingMargin" id="ELi-9L-jAw"/>
+                            <constraint firstItem="jxu-hI-nhf" firstAttribute="top" secondItem="xsK-PE-xw4" secondAttribute="bottom" constant="8" id="HkE-oe-dPI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xsK-PE-xw4" secondAttribute="trailing" constant="-16" id="JdM-Vn-bBH"/>
+                            <constraint firstItem="xsK-PE-xw4" firstAttribute="top" secondItem="Efo-ED-MSW" secondAttribute="bottom" id="JfW-C9-Joa"/>
+                            <constraint firstItem="LJ7-MY-5He" firstAttribute="top" secondItem="ffg-ei-mpv" secondAttribute="bottom" constant="8" id="SSj-nl-d4U"/>
+                            <constraint firstItem="jxu-hI-nhf" firstAttribute="trailing" secondItem="4vH-su-GPx" secondAttribute="trailingMargin" id="Zw6-rp-kQF"/>
+                            <constraint firstItem="xsK-PE-xw4" firstAttribute="leading" secondItem="4vH-su-GPx" secondAttribute="leadingMargin" constant="-16" id="aIs-8h-cGS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Casino Picker" image="dollars" selectedImage="dollars" id="N92-9c-iKT">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="dollars"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="casinoPicker" destination="xsK-PE-xw4" id="gqL-hU-9vA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWP-W9-41P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3890" y="-2849"/>
+        </scene>
+        <!--Date Picker-->
+        <scene sceneID="qCp-yd-TKb">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="k7O-tP-W88" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IoI-nL-4ay"/>
+                        <viewControllerLayoutGuide type="bottom" id="eI1-nV-gkS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bwh-4g-lxl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2J-mI-hxp">
+                                <rect key="frame" x="16" y="244" width="288" height="267"/>
+                                <string key="text">This is the UIDatePicker View. It's also the first tab of a UITabBarController view. There are tabs on the bottom of the screen that show different types of pickers, like city pickers and casino pickers!</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eaf-Y3-O1c">
+                                <rect key="frame" x="0.0" y="20" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="OwV-Ue-4C4"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="441516304.33051801">
+                                    <!--2014-12-29 03:25:04 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p2J-mI-hxp" firstAttribute="trailing" secondItem="bwh-4g-lxl" secondAttribute="trailingMargin" id="1Qb-Cl-58c"/>
+                            <constraint firstItem="eaf-Y3-O1c" firstAttribute="leading" secondItem="bwh-4g-lxl" secondAttribute="leadingMargin" constant="-16" id="EET-ZC-l69"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eaf-Y3-O1c" secondAttribute="trailing" constant="-16" id="YEl-74-6e8"/>
+                            <constraint firstItem="p2J-mI-hxp" firstAttribute="top" secondItem="eaf-Y3-O1c" secondAttribute="bottom" constant="8" id="acQ-qw-wSf"/>
+                            <constraint firstItem="p2J-mI-hxp" firstAttribute="leading" secondItem="bwh-4g-lxl" secondAttribute="leadingMargin" id="muO-AA-KLY"/>
+                            <constraint firstItem="eaf-Y3-O1c" firstAttribute="top" secondItem="IoI-nL-4ay" secondAttribute="bottom" id="qAZ-lj-igK"/>
+                            <constraint firstItem="eI1-nV-gkS" firstAttribute="top" secondItem="p2J-mI-hxp" secondAttribute="bottom" constant="8" id="zNA-YL-oRq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Date Picker" image="alarm" selectedImage="alarm" id="Oug-nN-beZ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="alarm"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qm-Ij-27X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4335" y="-2793"/>
+        </scene>
+        <!--Computer Store View Controller-->
+        <scene sceneID="q2O-16-3Lx">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="O00-j7-6c5" customClass="ComputerStoreViewController" customModule="Shape" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jYC-Dy-vUc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dvq-gV-0hY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vu8-Al-U8a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-R9-OvG">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="t9q-Gi-YPs">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="t9q-Gi-YPs" firstAttribute="top" secondItem="lHf-R9-OvG" secondAttribute="top" id="AFm-oa-2pS"/>
+                                    <constraint firstAttribute="trailing" secondItem="t9q-Gi-YPs" secondAttribute="trailing" id="bE5-DL-81L"/>
+                                    <constraint firstAttribute="centerX" secondItem="t9q-Gi-YPs" secondAttribute="centerX" id="ehY-h8-fnG"/>
+                                    <constraint firstItem="t9q-Gi-YPs" firstAttribute="leading" secondItem="lHf-R9-OvG" secondAttribute="leading" id="hwt-aX-tvU"/>
+                                    <constraint firstAttribute="centerY" secondItem="t9q-Gi-YPs" secondAttribute="centerY" id="kyg-uU-jwR"/>
+                                    <constraint firstAttribute="bottom" secondItem="t9q-Gi-YPs" secondAttribute="bottom" id="szC-ih-7PK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lHf-R9-OvG" firstAttribute="top" secondItem="jYC-Dy-vUc" secondAttribute="bottom" id="4K5-vy-Tdn"/>
+                            <constraint firstItem="lHf-R9-OvG" firstAttribute="leading" secondItem="vu8-Al-U8a" secondAttribute="leadingMargin" constant="-16" id="Dsi-vA-JEl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHf-R9-OvG" secondAttribute="trailing" constant="-16" id="KBj-jI-pVV"/>
+                            <constraint firstItem="Dvq-gV-0hY" firstAttribute="top" secondItem="lHf-R9-OvG" secondAttribute="bottom" id="Vxg-WO-LKA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QId-MK-3TQ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="computerModelList" destination="t9q-Gi-YPs" id="QGR-JD-cS0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hz-qp-InM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2910" y="-3841"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="D2b-vK-keo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Tm-PS-V6L" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="LFE-Br-Xqy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="k7O-tP-W88" kind="relationship" relationship="viewControllers" id="9xg-qq-Hut"/>
+                        <segue destination="nzv-6t-vmf" kind="relationship" relationship="viewControllers" id="2MO-gF-ZK2"/>
+                        <segue destination="Fix-Sh-QPh" kind="relationship" relationship="viewControllers" id="0Xn-Rg-MYa"/>
+                        <segue destination="G9w-6e-AUA" kind="relationship" relationship="viewControllers" id="QOE-9u-A2F"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UC9-8V-mOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4318" y="-3860"/>
+        </scene>
+        <!--Table View-->
+        <scene sceneID="lJh-Bm-v6C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G9w-6e-AUA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Table View" image="grid" selectedImage="grid" id="6fq-Aj-A55">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="grid"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5D6-AJ-hgh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qgZ-GH-aPT" kind="relationship" relationship="rootViewController" id="2nT-gn-PsG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESN-eq-ToN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3815" y="-3849"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm" width="30" height="30"/>
+        <image name="button" width="52" height="50"/>
+        <image name="dollars" width="30" height="30"/>
+        <image name="grid" width="30" height="30"/>
+        <image name="location" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
